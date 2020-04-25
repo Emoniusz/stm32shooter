@@ -1,4 +1,3 @@
-# O projekcie
 # About the project
 This is a simple game that I prepared for classes at the university. It was developed for the STM32F429I-DISCO development board. The gameplay consists of shooting random characters, good and bad, appearing every round. The player has limited time to decide which character he wants to shoot. Depending on your choice, you can earn or lose points. For getting enough points, the number of lives increases by 1. When the time to make a decision is over, bad characters who have not been shot shoot at the player, which reduces the number of lives remaining. If the number of lives decreases to 0, the game stops, then it must be restarted. Otherwise, the next round begins.
 # Components used
