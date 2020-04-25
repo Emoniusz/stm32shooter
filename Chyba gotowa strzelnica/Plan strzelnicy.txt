@@ -1,0 +1,44 @@
+~~ EKRAN POWITALNY
+
+
+~~ PRZED PIERWSZA RUNDA
+
+
+~~ PRZYGOTOWANIE PRZED RUNDĄ
+
+    -- wypisanie numeru rundy
+    -- wymazuje czasy strzalu
+    -- ozywienie 1,2,3 , zmienna która symbolizuje śmierć
+    -- wylosowanie 1,2,3 (zly/dobry)
+    -- narysowanie drzwi 1,2,3 ( na frontowej warstwie )
+    -- narysowanie ludzi 1,2,3 ( pod drzwiami )
+
+~~ ROZPOCZĘCIE RUNDY
+
+    -- wyzerowanie licznika rundy
+    -- rozpoczecie odliczania czasu rundy (od 0)
+    -- zniknięcie drzwi
+    -- rozpoczecie wykrywania strzalu
+        -- [IF] jezeli ludzik nie był martwy
+        {
+            -- ustaw zmienną która symbolizuje śmierć
+            -- narysuj martwego ludzika
+            -- [IF] zastrzelono zlego , dodaj punkty "I" wyswietl czas
+                -- [IF] przekroczono prog punktow, (dodaj 1 zycie "I" zwieksz prog punktowy "I" rysuj nowa liczbe zyc)
+            -- [ELSE "if"] zastrzelono dobrego , odejmij punkty
+                -- [IF] przekroczono '0' , np -2 pkt , ustawic ilosc pkt na '0' , --!!!-- WAZNE --!!!-- , 0 pkt == "jakies int(10)"
+
+        }
+
+~~ ZAKOŃCZENIE RUNDY
+
+    -- zakończenie odliczania czasu rundy
+    -- zakończenie wykrywania strzalu
+    -- [IF] dobry zyje , narysuj szczesliwego dobrego "I" dodaj punkty
+        -- [IF] przekroczono prog punktow, (dodaj 1 zycie 'I' zwieksz prog punktowy)
+    -- [IF] zly zyje , narysuj strzelajacego zlego "I" odejmij zycie "I" wyswietl nowe zycie
+        -- [IF] przekroczono prog zyc , ZAKONCZ_GRE
+    -- dodaj "1" do liczby rund
+    -- ROZPOCZNIJ_KOLEJNA_RUNDE
+
+~~ KONIEC GRY

@@ -1,0 +1,21 @@
+HAL_Delay(LICZBA_MILISEKUND_DO_ODCZEKANIA); // czekanie
+
+// ---- 1 , czytanie przycisku
+
+Do odczytania stanu pinu słuzy metoda:
+HAL_GPIO_ReadPin(PORT, PIN);
+Metoda ta zwraca wartosc GPIO_PIN_SET lub GPIO_PIN_RESET, mozna ja zatem umiescic bezposrednio
+w odpowiednim warunku lub wynik funkcji przypisac do zmiennej typu GPIO_PinState
+
+// ---- 2 , ustawienie pinu
+
+Do zmiany stanu pinu słuzy metoda:
+HAL_GPIO_WritePin(PORT, PIN, STAN);
+Port oznaczane sa jako GPIOX (za litere X nalezy podac oznaczenie portu, np. dla PB2 bedzie to GPIOB),
+Piny oznaczane sa jako GPIO_PIN_X (za litere X nalezy podac numer pinu, np. GPIO_PIN_2),
+Stan moze przyjac wartosci GPIO_PIN_SET (napiecie) i GPIO_PIN_RESET (brak napiecia),
+Przykład: HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_SET);
+
+// ---- 3 , rysowanie
+
+BSP_LCD_DrawBitmap  ( uint32_t  X,  uint32_t  Y,  uint8_t *  pBmp  ) 

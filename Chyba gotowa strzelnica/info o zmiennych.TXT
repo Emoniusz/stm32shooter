@@ -1,0 +1,41 @@
+// LINIJKI
+
+    1. RUNDA
+    2. HP
+    3. SCORE
+    4. LV UP
+    5. TIME1
+    6. TIME2
+    7. TIME3
+
+
+// w zmienne.h
+
+obraz0	= drzwi
+obraz1	= dobry-zywy
+obraz2	= dobry-niezywy
+obraz3	= zly-zywy
+obraz4	= zly-strzela
+obraz5	= zly-niezywy
+
+// normalne zmienne
+
+uint8_t nr_rundy = 0;
+int16_t zycia = 3;
+int16_t punkty = 0;
+int16_t lv_up = 20;
+int16_t lv_up_cap = 20;
+long szansa_zly = 859000000;
+
+
+
+bool strzal [3] = { 0, 0, 0};
+bool ludzik_zyje [3] = { 1, 1, 1};
+bool ludzik_zly [3] = { 0, 0, 0};
+
+
+
+
+
+LCD_COLOR_TRANSPARENT
+LCD_COLOR_LIGHTGRAY
