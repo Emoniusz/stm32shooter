@@ -1,13 +1,14 @@
 # O projekcie
-Jest to prosta gra którą przygotowałem na zajęciach na uczelni. Została ona opracowana dla płytki rozwojowej STM32F429I-DISCO. Rozgrywka polega na strzelaniu do pojawiających się co rundę losowych postaci, dobrych i złych. Gracz ma ograniczony czas na podjęcie decyzji, do której postaci chce strzelić. Zależnie od wyboru gracz może zdobyć lub stracić punkty. Za otrzymanie odpowiedniej ilości punktów liczba żyć zwiększa się o 1. Gdy czas na podjęcie decyzji się zakończy, złe postacie które nie zostały zastrzelone strzelają do gracza przez co zmniejsza się ilość pozostałych żyć. Jeżeli liczba żyć zmniejszy się do 0, gra się zatrzymuje, należy ją wtedy zrestartować. W innym przypadku rozpoczyna się kolejna runda.
-# Wykorzystane komponenty
-Do projektu wykorzystałem jedynie  STM32F429I-DISCO oraz 3 przyciski. Były one kolejno podłączone do pinów PE2, PE4 i PE6 (oraz do 3V).  Każdy z nich służy do strzelania do innej postaci. 
-# Wyświetlanie zdjęć
-Najwięcej czasu przy tym projekcie poświęciłem na wymyślenie sposobu, jak wyświetlić zdjęcia na wyświetlaczu. Wykorzystałem w tym celu funkcję BSP_LCD_DrawBitmap() z sterownika wyświetlacza stm32f429i_discovery_lcd.c. Wcześniej przygotowane zdjęcia przekonwertowałem na tablice w języku C i dołączyłem je do projektu.
+# About the project
+This is a simple game that I prepared for classes at the university. It was developed for the STM32F429I-DISCO development board. The gameplay consists of shooting random characters, good and bad, appearing every round. The player has limited time to decide which character he wants to shoot. Depending on your choice, you can earn or lose points. For getting enough points, the number of lives increases by 1. When the time to make a decision is over, bad characters who have not been shot shoot at the player, which reduces the number of lives remaining. If the number of lives decreases to 0, the game stops, then it must be restarted. Otherwise, the next round begins.
+# Components used
+I only used STM32F429I-DISCO and 3 buttons. They were successively connected to pins PE2, PE4 and PE6 (and to 3V). Each of them is used to shoot a different character.
+# Display images
+I devoted the most time to this project to how to display images on the display. For this purpose I used the BSP_LCD_DrawBitmap () function from the display driver stm32f429i_discovery_lcd.c. I converted the previously prepared images into arrays in the C language and attached them to the project.
 
 ![All images](all_images.bmp)
 
 ![Display test](display_test.png)
 
-# Wykrywanie strzału 
-Do wykrywania strzału wykorzystałem mechanizm przerwań. Każdy z trzech przycisków przerywa główną pętlę programu i wywołuje mechanizm obsługi przerwań. Jeżeli program jest w momencie kiedy strzelanie jest dozwolone zmienia obrazki oraz punkty. W innym przypadku strzał jest ignorowany.
+# Shot detection
+I used the interrupt mechanism to detect the shot. Each of the three buttons breaks the main program loop and calls the interrupt handler. If the program is in shooting stage, it changes pictures and points. Otherwise the shot is ignored.
